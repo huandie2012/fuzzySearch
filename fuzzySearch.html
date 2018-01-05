@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模糊匹配</title>
+	<link rel="stylesheet" type="text/css" href="css/fuzzySearch.css">
+	<script type="text/javascript" src="https://img1.cache.netease.com/f2e/libs/jquery.js"></script>
+</head>
+<body>
+	<div class="fuzzySearch-outer">
+		<input type="text" name="fuzzySearch" class="buy-house-ipt" placeholder="请输入内容">
+		<div class="fuzzy-search-list"></div>
+	</div>
+	<script type="text/javascript" src="js/json.js"></script>
+	<script type="text/javascript" src="js/fuzzySearch.js"></script>
+	<script type="text/javascript">
+		var mhPiPei = new MHPiPei({
+			obj: ".fuzzySearch-outer", //获取模糊匹配的输入框所在的上下文
+			url: "js/json.js",
+			list: $(".fuzzy-search-list"), //匹配成功后返回的数据列表，用于存放
+			tip: "没有查找到相关内容", //匹配不成功显示的提示
+			listOuter: $(".fuzzy-search-list"), //存放列表的外层盒子（父元素）
+		});
+		mhPiPei.init();
+	</script>
+</body>
+</html>

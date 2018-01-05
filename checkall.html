@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>checkall</title>
+	<script type="text/javascript" src="https://img1.cache.netease.com/f2e/libs/jquery.js"></script>
+</head>
+<body>
+	<input type="checkbox" name="checkall">
+	<input type="checkbox" name="checkone">
+	<input type="checkbox" name="checkone">
+	<input type="checkbox" name="checkone">
+	<script type="text/javascript">
+		var checkall = $('input[name="checkall');
+		var checkone = $('input[name="checkone');
+		var checkArr = [];
+		checkall.change(function (){
+			if($(this).attr("checked")){
+				checkone.each(function (index,item){
+					$(item).attr("checked",true);
+				});
+			}else{
+				checkone.each(function (index,item){
+					$(item).attr("checked",false);
+				});
+			}
+		});
+		checkone.each(function (index,item){
+			$(item).change(function (){
+				if(!$(this).attr("checked")){
+					checkall.attr("checked",false);
+					checkArr.pop();
+				}else{
+					checkArr.push(true);
+				}
+				if(checkArr.length==3){
+					checkall.attr("checked",true);
+				}
+			});
+		});
+	</script>
+</body>
+</html>

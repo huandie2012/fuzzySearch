@@ -1,0 +1,56 @@
+*{
+	padding: 0px;
+	margin: 0px;
+    color: #333333;
+    font-size: 14px;
+}
+li,ul{
+    list-style: none;
+}
+.fuzzySearch-outer{
+	width: 310px;
+	margin: 50px auto;
+    height: 38px;
+    border-radius: 5px;
+    background-color: #f4f6f7;
+    /*overflow: hidden;*/
+    position: relative;
+}
+.fuzzySearch-outer input{
+    padding-left: 15px;
+    width: 100%;
+    line-height: 38px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+.fuzzy-search-list{
+    position: absolute;
+    width: 308px;
+    height: 190px;
+    overflow-y: scroll;
+    top: 38px;
+    left: 0px;
+    border: 1px solid #eee;
+    background-color: #ffffff;
+    display: none;
+    z-index: 500;
+}
+.fuzzy-search-list li{
+    padding-left: 15px;
+    width: 275px;
+    height: 38px;
+    line-height: 38px;
+    cursor: pointer;
+}
+.fuzzy-search-list li em.strong{
+    font-style: normal;
+    color: #ff133f;
+    font-weight: bold;
+}
+.fuzzy-search-list li:hover{
+    background-color: #f4f6f7;
+}
